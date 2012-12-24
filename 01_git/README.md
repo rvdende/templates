@@ -11,8 +11,8 @@ git status
 ```
 
 Add changes
-``
-git add 01_git
+```
+git add <file>
 ```
 
 Mark changes
@@ -25,9 +25,3 @@ Upload to git
 ```
 git push origin master
 ```
-
-Sample templates for nodejs
-
-The idea here is to have quick getting started 
-snippets ready for nooblets to get up and running fast!
-
