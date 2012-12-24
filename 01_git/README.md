@@ -18,7 +18,6 @@ git add <file>
 Mark changes
 ```
 git commit -m 'added git templates'
-
 ```
 
 Upload to git
