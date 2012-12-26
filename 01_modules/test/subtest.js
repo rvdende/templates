@@ -1,6 +1,6 @@
 //SUB.js
 //LOAD THIS MODULE
-console.log('loading sub.js - Company from subfolder');
+console.log('loading test/subtest.js - Company from subfolder');
 
 var company = {}
   company.insert = function(what) 
