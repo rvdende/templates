@@ -17,3 +17,5 @@ snippets ready for nooblets to get up and running fast!
 7 - realworld sensors and diy devices with arduino and nodejs
 ```
 
+
+![arduino](https://github.com/fluentart/templates/blob/master/projects/3D_Cube_Shiftreg_2012-12-26-233719.jpg?raw=true)
