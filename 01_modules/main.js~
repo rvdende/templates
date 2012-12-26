@@ -5,5 +5,4 @@ console.log(company)
 company.insert('abc');
 company.functwo('testb');
 
-var subtest = require('./test/subtest');
-
+var company = require('./test/subtest');
