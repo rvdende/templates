@@ -73,6 +73,7 @@ io.sockets.on('connection', function (socket) {
   socket.emit('news', { text:'socket.io', done:false });
   socket.on('my other event', function (data) {
     console.log(data);
+    socket.broadcast.emit('incoming',{ textinc: data.my});
   });
   socket.on('todo', function (data) {
     console.log(data);
