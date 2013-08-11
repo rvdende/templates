@@ -9,14 +9,26 @@
         <script src="/socket.io/socket.io.js"></script>
         <script src="/angular.min.js"></script>            
         <script>
-
+        var angscope;
+        var lastsent = '';
           var socket = io.connect('http://localhost');
-          socket.on('news', function (data) {
+          
+          socket.on('news', function (data) {            
             console.log(data);
             socket.emit('my other event', { my: 'data' });
           });
 
+          socket.on('incoming', function (data) {
+            angscope.todoText = data.textinc;
+            angscope.incoming = data.textinc;
+            angscope.$apply();
+            console.log(data);
+          });
+
+
+
           function arrowapp($scope) {
+            angscope = $scope;
   $scope.todos = [
     {text:'learn angular', done:true},
     {text:'build an angular app', done:false}];
@@ -28,7 +40,13 @@
  
   $scope.remaining = function() {
     console.log($scope.todoText)
-    socket.emit('my other event', { my: $scope.todoText });
+    angscope.yourName = $scope.todoText;
+    if ($scope.todoText != lastsent) {
+      socket.emit('my other event', { my: $scope.todoText });  
+      lastsent = $scope.todoText
+    }   
+
+
     var count = 0;
     angular.forEach($scope.todos, function(todo) {
       count += todo.done ? 0 : 1;
@@ -72,6 +90,9 @@
                placeholder="add new todo here">
         <input class="btn-primary" type="submit" value="add">
       </form>
+    </div>
+    <div>
+      <p>{{incoming}}</p>
     </div>
     </body>
 </html>
