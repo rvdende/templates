@@ -2,16 +2,16 @@
 <html lang="en" ng-app>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Arrow</title>
-        <link rel="stylesheet" href="/css/pure-min.css">
-        <link rel="stylesheet" href="/css/jongani.css">
+
         <script src="/socket.io/socket.io.js"></script>
         <script src="/angular.min.js"></script>            
         <script>
         var angscope;
         var lastsent = '';
-          var socket = io.connect('http://localhost');
+          //var socket = io.connect('http://localhost');
+          var socket = io.connect();
           
           socket.on('news', function (data) {            
             console.log(data);
